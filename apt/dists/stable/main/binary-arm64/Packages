@@ -1,0 +1,18 @@
+Package: akahs
+Architecture: arm64
+Version: 0.1.0
+Priority: optional
+Section: net
+Maintainer: Akahs
+Installed-Size: 11680
+Depends: libdbus-1-3, libwebkit2gtk-4.1-0, libgtk-3-0
+Filename: pool/main/a/akahs/akahs_0.1.0_arm64.deb
+Size: 6071142
+MD5sum: e28c39d1ee630554ea95d7428ffd69fa
+SHA1: 89957c663bb13c0afe87d6264b1085ada0efc17f
+SHA256: d4505be5fb30d3b2c87bc8155ddadb7778cde54323da3b6c73a2c28bfbf1fc52
+SHA512: 70f427ca60a016756f698f71308ab86a1ed7a5524f819869a43d5d04ea142184361febe08a622537aafe2da3c8509f76189624e48382a22186d7c651ae285bc8
+Homepage: https://chat.akahs.com
+Description: Akahs Chat
+ Khmer-first messaging from Akahs.
+
