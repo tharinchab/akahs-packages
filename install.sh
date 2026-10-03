@@ -4,8 +4,8 @@
 #   curl -fsSL https://downloads.akahs.com/install.sh | sh            # the app
 #   curl -fsSL https://downloads.akahs.com/install.sh | sh -s -- --cli  # akahs-cli
 #
-# Debian/Ubuntu/Mint/Pop!_OS/Kali → apt repo · Fedora/RHEL/Rocky/Alma → dnf
-# repo · openSUSE → zypper repo · Arch/Manjaro → AUR (paru/yay) · anything
+# Debian/Ubuntu/Mint/Pop!_OS/Kali → apt repo · Fedora → dnf repo (RHEL,
+# Rocky and Alma have no WebKitGTK 4.1 → Flatpak) · openSUSE → zypper repo · Arch/Manjaro → AUR (paru/yay) · anything
 # else, or a distro too old for WebKitGTK 4.1 → Flatpak, else AppImage.
 # After this, updates come with the system's normal update command.
 set -eu
@@ -212,7 +212,7 @@ case $FAMILY in
   *" fedora "* | *" rhel "* | *" centos "* | *" rocky "* | *" almalinux "*)
     tool=yum; have dnf && tool=dnf
     if [ "$WHAT" = cli ] || { glibc_ok && rpm_has_webkit41 "$tool"; }; then install_rpm_repo "$tool" || fallback
-    else say "This release has no WebKitGTK 4.1 (needs Fedora 37+ / RHEL 10+)"; fallback
+    else say "This release has no WebKitGTK 4.1 (native packages need Fedora 37+; RHEL, Rocky and Alma use Flatpak)"; fallback
     fi ;;
   *" opensuse "* | *" suse "* | *" sles "*)
     install_rpm_repo zypper || fallback ;;

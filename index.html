@@ -126,7 +126,7 @@
     <p><span lang="km">ជ្រើសរើស distro របស់អ្នក៖</span><span lang="en">Pick your distro:</span></p>
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-tab="apt">Ubuntu · Debian · Mint</button>
-      <button role="tab" aria-selected="false" data-tab="dnf">Fedora · RHEL</button>
+      <button role="tab" aria-selected="false" data-tab="dnf">Fedora</button>
       <button role="tab" aria-selected="false" data-tab="zypper">openSUSE</button>
       <button role="tab" aria-selected="false" data-tab="arch">Arch</button>
       <button role="tab" aria-selected="false" data-tab="flatpak">Flatpak · Snap</button>
@@ -140,7 +140,7 @@
     <div class="panel" data-panel="dnf" hidden>
       <div class="cmd"><code>sudo dnf config-manager addrepo --from-repofile=https://downloads.akahs.com/rpm/akahs.repo</code><button class="copy" type="button">Copy</button></div>
       <div class="cmd"><code>sudo dnf install akahs</code><button class="copy" type="button">Copy</button></div>
-      <p class="note">Fedora 37+, RHEL / Rocky / Alma 10+. <span lang="km">RHEL 9 សូមប្រើ Flatpak។</span><span lang="en">On RHEL 9, use Flatpak.</span></p>
+      <p class="note">Fedora 37+. <span lang="km">RHEL, Rocky និង Alma សូមប្រើ Flatpak។</span><span lang="en">On RHEL, Rocky and Alma, use Flatpak.</span></p>
     </div>
     <div class="panel" data-panel="zypper" hidden>
       <div class="cmd"><code>sudo zypper addrepo https://downloads.akahs.com/rpm/akahs.repo</code><button class="copy" type="button">Copy</button></div>
