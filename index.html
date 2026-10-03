@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="km" data-lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akahs Downloads</title>
+<meta name="description" content="Download Akahs for Linux, Windows and macOS.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F9; --surface: #F4ECF4; --elevated: #FFFFFF;
+    --text: #241431; --text-2: #4A3859; --text-3: rgba(36,20,49,.55);
+    --brand: #241431; --on-brand: #FFFFFF; --mint: #B8DCBA;
+    --sep: rgba(36,20,49,.10); --code-bg: #241431; --code-text: #F5F5F7;
+    --ease: cubic-bezier(.2,.9,.3,1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000; --surface: #1B1B1F; --elevated: #26262B;
+      --text: #F5F5F7; --text-2: #C9C9D2; --text-3: #8E8E98;
+      --brand: #F2F0F5; --on-brand: #17161B; --mint: #C8E6CC;
+      --sep: rgba(70,70,74,.55); --code-bg: #1B1B1F; --code-text: #F5F5F7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 400 16px/1.55 "Google Sans", "Kantumruy Pro", "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  :lang(km) body, [data-lang="km"] body { line-height: 1.7; }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; text-decoration: none; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .lang { display: inline-flex; background: var(--surface); border-radius: 999px; padding: 3px; }
+  .lang button {
+    border: 0; background: transparent; color: var(--text-2); font: inherit; font-size: 13px;
+    padding: 5px 12px; border-radius: 999px; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease);
+  }
+  .lang button[aria-pressed="true"] { background: var(--elevated); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .hero { padding: 40px 0 28px; text-align: center; }
+  .hero img { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 14px 30px rgba(36,20,49,.16); }
+  h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 20px 0 8px; font-weight: 700; letter-spacing: -.01em; }
+  .lead { color: var(--text-2); margin: 0 auto; max-width: 520px; }
+  .card { background: var(--elevated); border: 1px solid var(--sep); border-radius: 20px; padding: 20px; margin: 16px 0; }
+  .card h2 { font-size: 17px; margin: 0 0 4px; font-weight: 600; }
+  .card p { margin: 0 0 14px; color: var(--text-2); font-size: 14px; }
+  .cmd {
+    display: flex; align-items: center; gap: 8px; background: var(--code-bg); color: var(--code-text);
+    border-radius: 14px; padding: 6px 6px 6px 16px; overflow: hidden;
+  }
+  .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font: 500 14px/2.4 ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace; scrollbar-width: none; }
+  .cmd code::-webkit-scrollbar { display: none; }
+  .copy {
+    flex: none; border: 0; border-radius: 10px; padding: 0 14px; height: 36px; cursor: pointer;
+    background: rgba(255,255,255,.12); color: inherit; font: 500 13px/1 inherit; font-family: inherit;
+    transition: background .2s var(--ease), transform .12s var(--ease);
+  }
+  .copy:hover { background: rgba(255,255,255,.2); }
+  .copy:active { transform: scale(.96); }
+  .copy.done { background: var(--mint); color: #17161B; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tabs button {
+    border: 1px solid var(--sep); background: transparent; color: var(--text-2); font: inherit; font-size: 13px;
+    padding: 7px 12px; border-radius: 999px; cursor: pointer; transition: all .2s var(--ease);
+  }
+  .tabs button[aria-selected="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+  .panel[hidden] { display: none; }
+  .panel .cmd + .cmd { margin-top: 8px; }
+  .note { font-size: 13px; color: var(--text-3); margin: 10px 2px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .dl {
+    display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 14px 16px;
+    background: var(--surface); border-radius: 14px; transition: transform .15s var(--ease), background .2s var(--ease);
+  }
+  .dl:hover { transform: translateY(-1px); }
+  .dl:active { transform: scale(.98); }
+  .dl svg { flex: none; width: 22px; height: 22px; }
+  .dl strong { display: block; font-size: 15px; font-weight: 600; }
+  .dl span { font-size: 12.5px; color: var(--text-3); }
+  .fp { font: 500 12.5px/1.6 ui-monospace, Menlo, monospace; word-break: break-all; color: var(--text-2); }
+  footer { color: var(--text-3); font-size: 13px; text-align: center; padding: 28px 0 40px; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 8px; }
+  [data-lang="km"] [lang="en"], [data-lang="en"] [lang="km"] { display: none; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="https://chat.akahs.com"><img src="icon.png" alt="" width="32" height="32">Akahs</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="km" aria-pressed="true">ខ្មែរ</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="icon.png" alt="" width="88" height="88">
+    <h1><span lang="km">ទាញយក អាកាស</span><span lang="en">Download Akahs</span></h1>
+    <p class="lead">
+      <span lang="km">ការផ្ញើសារជាភាសាខ្មែរជាមុន សម្រាប់ Linux, Windows និង macOS។ សារត្រូវបានរក្សាទុកនៅលើកុំព្យូទ័ររបស់អ្នក ដូច្នេះវាបើកភ្លាមៗ និងដំណើរការក្រៅបណ្ដាញ។</span>
+      <span lang="en">Khmer-first messaging for Linux, Windows and macOS. Your messages are kept on your computer, so it opens instantly and works offline.</span>
+    </p>
+  </section>
+
+  <div class="card">
+    <h2>Linux</h2>
+    <p>
+      <span lang="km">ពាក្យបញ្ជាមួយសម្រាប់គ្រប់ distro។ វាស្គាល់ប្រព័ន្ធរបស់អ្នក ហើយបន្ថែមឃ្លាំងត្រឹមត្រូវ ដូច្នេះការធ្វើបច្ចុប្បន្នភាពមកជាមួយការធ្វើបច្ចុប្បន្នភាពប្រព័ន្ធធម្មតា។</span>
+      <span lang="en">One command for every distro. It detects your system and adds the right repository, so updates arrive with your normal system updates.</span>
+    </p>
+    <div class="cmd"><code>curl -fsSL https://downloads.akahs.com/install.sh | sh</code><button class="copy" type="button">Copy</button></div>
+    <p class="note"><span lang="km">ចង់បានតែកម្មវិធីបន្ទាត់ពាក្យបញ្ជា៖</span><span lang="en">Just the command-line app:</span> <code>… | sh -s -- --cli</code></p>
+  </div>
+
+  <div class="card">
+    <h2><span lang="km">ឬដំឡើងដោយផ្ទាល់</span><span lang="en">Or install it yourself</span></h2>
+    <p><span lang="km">ជ្រើសរើស distro របស់អ្នក៖</span><span lang="en">Pick your distro:</span></p>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="apt">Ubuntu · Debian · Mint</button>
+      <button role="tab" aria-selected="false" data-tab="dnf">Fedora · RHEL</button>
+      <button role="tab" aria-selected="false" data-tab="zypper">openSUSE</button>
+      <button role="tab" aria-selected="false" data-tab="arch">Arch</button>
+      <button role="tab" aria-selected="false" data-tab="flatpak">Flatpak · Snap</button>
+    </div>
+    <div class="panel" data-panel="apt">
+      <div class="cmd"><code>curl -fsSL https://downloads.akahs.com/akahs.gpg | sudo tee /usr/share/keyrings/akahs.gpg &gt;/dev/null</code><button class="copy" type="button">Copy</button></div>
+      <div class="cmd"><code>echo "deb [signed-by=/usr/share/keyrings/akahs.gpg] https://downloads.akahs.com/apt stable main" | sudo tee /etc/apt/sources.list.d/akahs.list</code><button class="copy" type="button">Copy</button></div>
+      <div class="cmd"><code>sudo apt update &amp;&amp; sudo apt install akahs</code><button class="copy" type="button">Copy</button></div>
+      <p class="note">Ubuntu 22.04+, Debian 12+, Linux Mint 21+, Pop!_OS 22.04+</p>
+    </div>
+    <div class="panel" data-panel="dnf" hidden>
+      <div class="cmd"><code>sudo dnf config-manager addrepo --from-repofile=https://downloads.akahs.com/rpm/akahs.repo</code><button class="copy" type="button">Copy</button></div>
+      <div class="cmd"><code>sudo dnf install akahs</code><button class="copy" type="button">Copy</button></div>
+      <p class="note">Fedora 37+, RHEL / Rocky / Alma 10+. <span lang="km">RHEL 9 សូមប្រើ Flatpak។</span><span lang="en">On RHEL 9, use Flatpak.</span></p>
+    </div>
+    <div class="panel" data-panel="zypper" hidden>
+      <div class="cmd"><code>sudo zypper addrepo https://downloads.akahs.com/rpm/akahs.repo</code><button class="copy" type="button">Copy</button></div>
+      <div class="cmd"><code>sudo zypper refresh &amp;&amp; sudo zypper install akahs</code><button class="copy" type="button">Copy</button></div>
+      <p class="note">openSUSE Leap 15.6+, Tumbleweed</p>
+    </div>
+    <div class="panel" data-panel="arch" hidden>
+      <div class="cmd"><code>yay -S akahs-bin</code><button class="copy" type="button">Copy</button></div>
+      <p class="note"><span lang="km">កញ្ចប់ AUR នឹងមកដល់ឆាប់ៗ។ បច្ចុប្បន្ន សូមប្រើ Flatpak ឬ AppImage។</span><span lang="en">The AUR package is coming soon. Until then, use Flatpak or the AppImage.</span></p>
+    </div>
+    <div class="panel" data-panel="flatpak" hidden>
+      <div class="cmd"><code>flatpak install flathub com.akahs.Chat</code><button class="copy" type="button">Copy</button></div>
+      <div class="cmd"><code>sudo snap install akahs</code><button class="copy" type="button">Copy</button></div>
+      <p class="note"><span lang="km">ដំណើរការលើ distro ណាក៏បាន រួមទាំងចាស់ៗ។</span><span lang="en">Works on any distro, including older ones.</span></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span lang="km">ឯកសារដំឡើង</span><span lang="en">Installers</span></h2>
+    <p><span lang="km">កំណែចុងក្រោយ៖</span><span lang="en">Latest release:</span></p>
+    <div class="grid">
+      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3V5.5Zm8.5-1.2L21 3v8.5h-9.5V4.3ZM3 12.5h7.5v7.1L3 18.5v-6Zm8.5 0H21V21l-9.5-1.3v-7.2Z"/></svg>
+        <div><strong>Windows</strong><span>10 · 11 — .exe · .msi</span></div>
+      </a>
+      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.8-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg>
+        <div><strong>macOS</strong><span>Apple silicon — .dmg</span></div>
+      </a>
+      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest/download/Akahs-x86_64.AppImage">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-2 0-3 2.2-3 4.6 0 1 .3 1.8.6 2.6-1.6 1.8-3.6 4.6-3.6 7.3 0 .7.2 1.3.5 1.8-.6.4-1.5.7-1.5 1.5 0 1 1.5 1.2 3.2 1.2 1.1 0 2-.3 2.6-.7.4.1.8.1 1.2.1s.8 0 1.2-.1c.6.4 1.5.7 2.6.7 1.7 0 3.2-.2 3.2-1.2 0-.8-.9-1.1-1.5-1.5.3-.5.5-1.1.5-1.8 0-2.7-2-5.5-3.6-7.3.3-.8.6-1.6.6-2.6C15 4.2 14 2 12 2Z"/></svg>
+        <div><strong>AppImage</strong><span>Linux x86_64</span></div>
+      </a>
+    </div>
+    <p class="note"><span lang="km">កុំព្យូទ័រ ARM64៖</span><span lang="en">ARM64 computers:</span> <a href="https://github.com/tharinchab/akahs-packages/releases/latest/download/Akahs-aarch64.AppImage">Akahs-aarch64.AppImage</a></p>
+  </div>
+
+  <div class="card">
+    <h2><span lang="km">ផ្ទៀងផ្ទាត់កញ្ចប់</span><span lang="en">Verify the packages</span></h2>
+    <p><span lang="km">កញ្ចប់ និងឃ្លាំងទាំងអស់ត្រូវបានចុះហត្ថលេខាដោយកូនសោនេះ៖</span><span lang="en">Every package and repository is signed with this key:</span></p>
+    <p class="fp">Akahs Packages &lt;packages@akahs.com&gt;<br>9AF4 7E79 D55F B40A 4351 45E0 4996 80B4 E564 FE29</p>
+  </div>
+
+  <footer>© Akahs · <a href="https://chat.akahs.com">chat.akahs.com</a></footer>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    function setLang(l) {
+      root.dataset.lang = l; root.lang = l;
+      document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.setLang === l)); });
+      try { localStorage.setItem("akahs.lang", l); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem("akahs.lang"); } catch (e) {}
+    setLang(saved || ((navigator.language || "km").toLowerCase().indexOf("km") === 0 ? "km" : (navigator.language || "").slice(0, 2) === "en" ? "en" : "km"));
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.setLang); }); });
+
+    document.querySelectorAll(".copy").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var text = btn.parentElement.querySelector("code").textContent;
+        var done = function () {
+          btn.textContent = "Copied"; btn.classList.add("done");
+          setTimeout(function () { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1600);
+        };
+        if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+      });
+    });
+
+    var tabs = document.querySelectorAll("[data-tab]");
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () {
+        tabs.forEach(function (o) { o.setAttribute("aria-selected", String(o === t)); });
+        document.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== t.dataset.tab; });
+      });
+    });
+    var ua = navigator.userAgent;
+    if (/Fedora|Red Hat/i.test(ua)) tabs[1].click();
+  })();
+</script>
+</body>
+</html>
