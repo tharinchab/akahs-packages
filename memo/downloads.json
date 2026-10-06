@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "files": [
+    {
+      "os": "linux",
+      "kind": "rpm",
+      "name": "Akahs-Memo-0.1.0-1.x86_64.rpm",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.1.0/Akahs-Memo-0.1.0-1.x86_64.rpm",
+      "size": 11982613,
+      "sha256": "0aca76ed3634a6c2bd3f94a72c62bb81671fe481b25e8bfe58277f2cfb82ddf7"
+    },
+    {
+      "os": "linux",
+      "kind": "appimage",
+      "name": "Akahs-Memo_0.1.0_amd64.AppImage",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.1.0/Akahs-Memo_0.1.0_amd64.AppImage",
+      "size": 89983480,
+      "sha256": "367994b3c139ec0193102d0aaf7aef83de289d3577f74ca93a5a5a9695f2c146"
+    },
+    {
+      "os": "linux",
+      "kind": "deb",
+      "name": "Akahs-Memo_0.1.0_amd64.deb",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.1.0/Akahs-Memo_0.1.0_amd64.deb",
+      "size": 11979498,
+      "sha256": "469b7fb98fff863d93be370819474087a54468bbfb2b718758c0453bc9d7e771"
+    },
+    {
+      "os": "windows",
+      "kind": "exe",
+      "name": "Akahs-Memo_0.1.0_x64-setup.exe",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.1.0/Akahs-Memo_0.1.0_x64-setup.exe",
+      "size": 9892931,
+      "sha256": "cd8764f7dac998bd49334836cb195248fcfe81f0b3f473931e9f533387e44b1c"
+    }
+  ]
+}
