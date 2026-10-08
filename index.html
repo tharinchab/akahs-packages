@@ -118,7 +118,7 @@
       <span lang="en">One command for every distro. It detects your system and adds the right repository, so updates arrive with your normal system updates.</span>
     </p>
     <div class="cmd"><code>curl -fsSL https://downloads.akahs.com/install.sh | sh</code><button class="copy" type="button">Copy</button></div>
-    <p class="note"><span lang="km">ចង់បានតែកម្មវិធីបន្ទាត់ពាក្យបញ្ជា៖</span><span lang="en">Just the command-line app:</span> <code>… | sh -s -- --cli</code></p>
+    <p class="note"><span lang="km">ចង់បានតែកម្មវិធីក្នុង Terminal៖ មើល akahs-cli ខាងក្រោម។</span><span lang="en">Just the terminal app: see akahs-cli below.</span></p>
   </div>
 
   <div class="card">
@@ -179,25 +179,31 @@
       <span lang="km">ផ្សេងទៀត៖</span><span lang="en">More:</span>
       <a href="https://github.com/tharinchab/akahs-packages/releases/download/v0.1.1/Akahs-windows-x64.msi" download>Windows .msi</a> ·
       <a href="https://github.com/tharinchab/akahs-packages/releases/download/v0.1.1/Akahs-aarch64.AppImage" download>Linux ARM64 AppImage</a> ·
-      <a href="https://github.com/tharinchab/akahs-packages/releases/latest"><span lang="km">កំណែទាំងអស់ និង SHA256</span><span lang="en">all files and SHA256 checksums</span></a>
+      <a href="https://github.com/tharinchab/akahs-packages/releases"><span lang="km">កំណែទាំងអស់ និង SHA256</span><span lang="en">all files and SHA256 checksums</span></a>
     </p>
   </div>
 
   <div class="card">
-    <h2><span lang="km">កម្មវិធីក្នុង Terminal (akahs-cli)</span><span lang="en">Terminal app (akahs-cli)</span></h2>
-    <p><span lang="km">ជជែក ផ្ញើសារ បន្ថែមមិត្ត និងទទួលការជូនដំណឹង ពី Terminal។ ចូលគណនីតាមគេហទំព័រ (passkey, Google ឬពាក្យសម្ងាត់) ហើយត្រឡប់មក Terminal វិញដោយស្វ័យប្រវត្តិ។</span><span lang="en">Chat, send messages, add friends and get notified from your terminal. Sign in on the website (passkey, Google or password) and it comes back to the terminal by itself.</span></p>
-    <div class="grid">
-      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest/download/akahs-cli-macos-universal.tar.gz" download>
-        <div><strong>macOS</strong><span>Apple silicon &amp; Intel — .tar.gz</span></div>
-      </a>
-      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest/download/akahs-cli-windows-x64.zip" download>
-        <div><strong>Windows</strong><span>x64 — .zip</span></div>
-      </a>
-      <a class="dl" href="https://github.com/tharinchab/akahs-packages/releases/latest/download/akahs-cli-x86_64-linux.tar.gz" download>
-        <div><strong>Linux</strong><span>x86_64 — .tar.gz</span></div>
-      </a>
+    <h2 id="cli"><span lang="km">កម្មវិធីក្នុង Terminal (akahs-cli)</span><span lang="en">Terminal app (akahs-cli)</span></h2>
+    <p><span lang="km">ជជែក ផ្ញើសារ បន្ថែមមិត្ត និងទទួលការជូនដំណឹង ពី Terminal។ ពាក្យបញ្ជាមួយដំឡើង ដោយមិនត្រូវការ sudo ឬ admin។</span><span lang="en">Chat, send messages, add friends and get notified from your terminal. One command installs it, no sudo or admin needed.</span></p>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="cli-unix">macOS · Linux</button>
+      <button role="tab" aria-selected="false" data-tab="cli-win">Windows</button>
     </div>
-    <p class="note"><span lang="km">បន្ទាប់មកដំណើរការ</span><span lang="en">Then run</span> <code>akahs-cli</code> · <code>akahs-cli --help</code> · <span lang="km">តាម SSH៖</span><span lang="en">over SSH:</span> <code>akahs-cli login --with code</code></p>
+    <div class="panel" data-panel="cli-unix">
+      <div class="cmd"><code>curl -fsSL https://downloads.akahs.com/cli.sh | sh</code><button class="copy" type="button">Copy</button></div>
+    </div>
+    <div class="panel" data-panel="cli-win" hidden>
+      <div class="cmd"><code>irm https://downloads.akahs.com/cli.ps1 | iex</code><button class="copy" type="button">Copy</button></div>
+      <p class="note"><span lang="km">ក្នុង PowerShell។</span><span lang="en">In PowerShell.</span></p>
+    </div>
+    <p class="note"><span lang="km">បន្ទាប់មកដំណើរការ</span><span lang="en">Then run</span> <code>akahs-cli</code> · <span lang="km">ធ្វើបច្ចុប្បន្នភាព៖</span><span lang="en">update:</span> <code>akahs-cli update</code> · <span lang="km">តាម SSH៖</span><span lang="en">over SSH:</span> <code>akahs-cli login --with code</code> · <a href="https://chat.akahs.com/cli"><span lang="km">ឯកសារ</span><span lang="en">docs</span></a></p>
+    <p class="note"><span lang="km">ឯកសារផ្ទាល់៖</span><span lang="en">Files:</span>
+      <a href="https://github.com/tharinchab/akahs-packages/releases/download/cli/akahs-cli-macos-universal.tar.gz">macOS</a> ·
+      <a href="https://github.com/tharinchab/akahs-packages/releases/download/cli/akahs-cli-windows-x64.zip">Windows x64</a> ·
+      <a href="https://github.com/tharinchab/akahs-packages/releases/download/cli/akahs-cli-x86_64-linux.tar.gz">Linux x86_64</a> ·
+      <a href="https://github.com/tharinchab/akahs-packages/releases/download/cli/akahs-cli-aarch64-linux.tar.gz">Linux ARM64</a> ·
+      <a href="https://github.com/tharinchab/akahs-packages/releases/download/cli/SHA256SUMS">SHA256</a></p>
   </div>
 
   <div class="card">
@@ -232,15 +238,20 @@
       });
     });
 
-    var tabs = document.querySelectorAll("[data-tab]");
-    tabs.forEach(function (t) {
-      t.addEventListener("click", function () {
-        tabs.forEach(function (o) { o.setAttribute("aria-selected", String(o === t)); });
-        document.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== t.dataset.tab; });
+    // Each card's tabs switch only that card's panels.
+    document.querySelectorAll(".tabs").forEach(function (list) {
+      var card = list.parentElement;
+      var tabs = list.querySelectorAll("[data-tab]");
+      tabs.forEach(function (t) {
+        t.addEventListener("click", function () {
+          tabs.forEach(function (o) { o.setAttribute("aria-selected", String(o === t)); });
+          card.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== t.dataset.tab; });
+        });
       });
     });
     var ua = navigator.userAgent;
-    if (/Fedora|Red Hat/i.test(ua)) tabs[1].click();
+    if (/Fedora|Red Hat/i.test(ua)) document.querySelector('[data-tab="dnf"]').click();
+    if (/Windows/i.test(ua)) document.querySelector('[data-tab="cli-win"]').click();
   })();
 </script>
 </body>
