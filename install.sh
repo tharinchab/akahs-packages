@@ -1,9 +1,13 @@
 #!/bin/sh
 # Akahs for macOS and Linux: one command.
 #
-#   curl -fsSL https://downloads.akahs.com/cli.sh | sh                    # akahs-cli
-#   curl -fsSL https://downloads.akahs.com/install.sh | sh                # the app
-#   curl -fsSL https://downloads.akahs.com/install.sh | sh -s -- --both   # both
+#   curl -fsSL https://tharinchab.github.io/akahs-packages/cli.sh | sh                    # akahs-cli
+#   curl -fsSL https://tharinchab.github.io/akahs-packages/install.sh | sh                # the app
+#   curl -fsSL https://tharinchab.github.io/akahs-packages/install.sh | sh -s -- --both   # both
+#
+# Already installed from the old downloads.akahs.com repository? Run the app line
+# once more: it points the existing apt/dnf/zypper repository file at the new
+# address (same signing key) and keeps everything else.
 #
 # akahs-cli: one file in ~/.local/bin (no sudo), checked against SHA256SUMS,
 # added to PATH; `akahs-cli update` keeps it current. cli.sh is this script
@@ -15,7 +19,11 @@
 # those update with the system's own update command.
 set -eu
 
-BASE=${AKAHS_DL_BASE:-https://downloads.akahs.com}
+# The one address every repository, key and script is served from (GitHub Pages).
+BASE=${AKAHS_DL_BASE:-https://tharinchab.github.io/akahs-packages}
+BASE=${BASE%/}
+# The retired host that earlier installs wrote into their repository files.
+LEGACY_BASE=https://downloads.akahs.com
 MIRROR=${AKAHS_DL_MIRROR:-https://mirror.akahs.com}
 PACKAGES=https://github.com/tharinchab/akahs-packages/releases/download
 # Fixed release tags (never "latest": other Akahs apps publish there too).
@@ -134,6 +142,9 @@ install_cli() {
     # Same-folder rename: a running akahs-cli keeps working, the next start is new.
     cp "$TMP/cli/akahs-cli" "$CLI_DIR/.akahs-cli.new"
     mv -f "$CLI_DIR/.akahs-cli.new" "$CLI_DIR/akahs-cli"
+    # The same program as akahs-chat-cli (Chat only) and akahs-memo-cli (Memo).
+    ln -sf akahs-cli "$CLI_DIR/akahs-chat-cli"
+    ln -sf akahs-cli "$CLI_DIR/akahs-memo-cli"
     version=$("$CLI_DIR/akahs-cli" --version 2>/dev/null) || die "akahs-cli was installed but doesn't start on this system"
     say "${G}✓${R} Installed $version to $CLI_DIR/akahs-cli"
   fi
@@ -167,6 +178,18 @@ pick_base() {
   elif fetch "$MIRROR/akahs.asc" "$TMP/akahs.asc" 2>/dev/null; then BASE=$MIRROR
   else die "can't reach $BASE or $MIRROR"
   fi
+}
+
+# Earlier installs wrote the retired downloads.akahs.com into their repository file. Point
+# those at $BASE first, so the package manager (apt update, dnf provides, ...) isn't
+# held up by the dead address before this script reaches its own repository step.
+migrate_legacy_repo_files() {
+  for f in /etc/apt/sources.list.d/akahs.list /etc/yum.repos.d/akahs.repo /etc/zypp/repos.d/akahs.repo; do
+    if [ -f "$f" ] && grep -qF "$LEGACY_BASE" "$f"; then
+      say "Moving $f from the old downloads address to $BASE"
+      run $SUDO sed -i "s#$LEGACY_BASE#$BASE#g" "$f"
+    fi
+  done
 }
 
 install_apt() {
@@ -265,6 +288,7 @@ install_linux_app() {
   ID=${ID:-unknown}
   family=" ${ID} ${ID_LIKE:-} "
   say "Detected ${PRETTY_NAME:-$ID} ($ARCH)"
+  migrate_legacy_repo_files
   case $family in
     *" debian "* | *" ubuntu "*)
       run $SUDO apt-get update -qq
@@ -288,7 +312,7 @@ install_app() {
   case $OS in
     Darwin) install_mac_app ;;
     Linux) install_linux_app ;;
-    *) die "on Windows, download Akahs from $BASE" ;;
+    *) die "on Windows, download Akahs from https://chat.akahs.com/#download" ;;
   esac
 }
 

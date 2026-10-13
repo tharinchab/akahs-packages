@@ -1,6 +1,6 @@
 # akahs-cli for Windows, in PowerShell:
 #
-#   irm https://downloads.akahs.com/cli.ps1 | iex
+#   irm https://tharinchab.github.io/akahs-packages/cli.ps1 | iex
 #
 # One file in %LOCALAPPDATA%\Programs\Akahs\bin (no admin), checked against
 # SHA256SUMS and added to your PATH. Update later with: akahs-cli update
@@ -35,6 +35,14 @@ $ProgressPreference = 'SilentlyContinue'
     Remove-Item $old -Force -ErrorAction SilentlyContinue
     if (Test-Path $exe) { Move-Item $exe $old -Force }
     Copy-Item "$tmp\x\akahs-cli.exe" $exe -Force
+    # The same program as akahs-chat-cli (Chat only) and akahs-memo-cli (Memo).
+    foreach ($n in 'akahs-chat-cli', 'akahs-memo-cli') {
+      $copy = Join-Path $dir "$n.exe"
+      $prev = Join-Path $dir "$n.old.exe"
+      Remove-Item $prev -Force -ErrorAction SilentlyContinue
+      if (Test-Path $copy) { Move-Item $copy $prev -Force }
+      Copy-Item $exe $copy -Force
+    }
     $version = & $exe --version
     Write-Host "==> Installed $version to $exe" -ForegroundColor Green
 
