@@ -1,15 +1,15 @@
 {
-  "version": "0.2.4",
-  "notes": "Akahs Memo 0.2.4",
-  "pub_date": "2026-10-16T15:39:42.292Z",
+  "version": "0.2.5",
+  "notes": "Akahs Memo 0.2.5",
+  "pub_date": "2026-10-17T06:33:18.162Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUVGNWVJbldHS2xQVXUyeFlqQ1B1UmVQaDZEQmo2UWsrcStrYW1NN0oxd3dLOEE4WWhKVWFpZEkvdzFEMHN0TDhKMUtTdUUwMWtpd3RwNjU3b3daamdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY1MDcwCWZpbGU6QWthaHMtTWVtb18wLjIuNF94NjQtc2V0dXAuZXhlCkR4clNPbFlXMGd1L3U1ZDBMdDM4d1ZrMEhmTVhKSWk5VFhKYXdjL0ZWV2ZGZFRheDNCdEFZTmtvcGI1SFVlM0ZwVG9sL2YyUFczVElCTmIrU3pWNkJRPT0K",
-      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.4/Akahs-Memo_0.2.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUhpMG1RQmhLZmNRVjZFVmEvWUxWU2h6TEVTZ3JQMmJDdVNZa09HbzUzV3RlRmc3UE4wemFuUjY4TkZ5SFJIRXMzNEVmOHpFMWo5SUpoeEhwMGhsOVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE4NjU5CWZpbGU6QWthaHMtTWVtb18wLjIuNV94NjQtc2V0dXAuZXhlCjhjTUFpSTRkSDR2ZDRqaHcxNGh0SndSVUs3cDVpL1ZxZUFrR0xmc0swd251M1lQbmorT0hjTFRmT1lPQklmM1JnVHB2Q0diMXVjSXN4ZjZMKzYxd0JnPT0K",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.5/Akahs-Memo_0.2.5_x64-setup.exe"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUJVYW1VVk9wakIzSC8xTTkzWmZUZCtISWNBNUNJUU1hemZPN1RxM0J0Z1BHR3NIeUZ0eHlDb3dJbVAwMU5rRkFFaGhyZ3d0UlFVVjJFWEx1WHJ6amdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTYyOTIxCWZpbGU6QWthaHMgTWVtb18wLjIuNF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMi40CldjYkpXMEZRVUdkaWZjaVNJTENuZEgyY2pRVExIMHZSUUdtdFYyZ0JGdmpORTBKbmdEV3Y2SkJnMmczdXZzb0M5NDdUQXluL1Z2Q2g0QUVkYVYxeEF3PT0K",
-      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.4/Akahs-Memo_0.2.4_amd64.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUsreVNCQjF6ZmM1M3daWnB5VHExVXEyNjM0ZjRLZ292NFQ2c0UxUXZxVkp0RlAyakF3cjduSUQzRk8xVDEzemd6V1ZjWWpFdkhRdUhIN1N6RHhUZmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE3OTE2CWZpbGU6QWthaHMgTWVtb18wLjIuNV9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMi41CldGQloyd1B3K3ZCMGhNSTBsZS9vT2RvanFWNkV3UVJ3dEdrUTlNL25yeDR4L25lalN0Um9xNGprSGpHazdDZTZQT3pIajNWMEpub0JNR0N2SEdUeURBPT0K",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.5/Akahs-Memo_0.2.5_amd64.AppImage"
     }
   }
 }
