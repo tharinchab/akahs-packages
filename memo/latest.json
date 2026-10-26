@@ -1,15 +1,15 @@
 {
-  "version": "0.2.5",
-  "notes": "Akahs Memo 0.2.5",
-  "pub_date": "2026-10-17T06:33:18.162Z",
+  "version": "0.2.8",
+  "notes": "Akahs Memo 0.2.8",
+  "pub_date": "2026-10-26T14:07:17.840Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUhpMG1RQmhLZmNRVjZFVmEvWUxWU2h6TEVTZ3JQMmJDdVNZa09HbzUzV3RlRmc3UE4wemFuUjY4TkZ5SFJIRXMzNEVmOHpFMWo5SUpoeEhwMGhsOVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE4NjU5CWZpbGU6QWthaHMtTWVtb18wLjIuNV94NjQtc2V0dXAuZXhlCjhjTUFpSTRkSDR2ZDRqaHcxNGh0SndSVUs3cDVpL1ZxZUFrR0xmc0swd251M1lQbmorT0hjTFRmT1lPQklmM1JnVHB2Q0diMXVjSXN4ZjZMKzYxd0JnPT0K",
-      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.5/Akahs-Memo_0.2.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUNtN1JtQVV4OXRBdEROSnVVNit6dDJJSU9UOE5oYXE0R2gvU0l4WXBYVG1xVWw0QlplQ0YzdWRnQ2hOSzJpOGZmMUNlRkdlRXhPYlJiMnNaOUJNeVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDA4NDQ4CWZpbGU6U29tbmVfMC4yLjhfeDY0LXNldHVwLmV4ZQpjbzNtY2xjY2FUUDVOOUZTa0xpbmN5TU5oc0dvRXNlbDlHWWNEUzVTYUgxckxodG9UN1YrQzJEQ1J0WnJuZCsvRkNaRUF3aVRMYUpFdTVoait3OE9Ddz09Cg==",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.8/Somne_0.2.8_x64-setup.exe"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dUsreVNCQjF6ZmM1M3daWnB5VHExVXEyNjM0ZjRLZ292NFQ2c0UxUXZxVkp0RlAyakF3cjduSUQzRk8xVDEzemd6V1ZjWWpFdkhRdUhIN1N6RHhUZmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE3OTE2CWZpbGU6QWthaHMgTWVtb18wLjIuNV9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMi41CldGQloyd1B3K3ZCMGhNSTBsZS9vT2RvanFWNkV3UVJ3dEdrUTlNL25yeDR4L25lalN0Um9xNGprSGpHazdDZTZQT3pIajNWMEpub0JNR0N2SEdUeURBPT0K",
-      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.5/Akahs-Memo_0.2.5_amd64.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUcDA2OE9UdXJ2dU9yb0FoWUplTHFTT2xyVU1Zai9tbXJMRGZYQXVoNktKRmJlY0dmSTFTREppMmFvU1FNSHMvaFFBbnNIUDZLV2Q1d0VKTE1TL1ZXSmI5T1pOcm0zMlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDA3MjA2CWZpbGU6U29tbmVfMC4yLjhfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjowLjIuOApIUm4wUERMbVVPWTRrT0Mvcjd6Y3lqSWpHbGkyeENXK0ZWa0Q2ZTQvTGFHVzNhNlVBT2ROMjFQb2U2SUo0a2hkdnpCUVplY3NET3ljbENDL0t5WVNDQT09Cg==",
+      "url": "https://github.com/tharinchab/akahs-packages/releases/download/memo-v0.2.8/Somne_0.2.8_amd64.AppImage"
     }
   }
 }
